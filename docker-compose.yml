@@ -1,0 +1,123 @@
+version: '3.9'
+
+
+services:
+  postgres:
+    image: postgres:14.11-alpine
+    container_name: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: shivaraj
+      POSTGRES_DB: codeorbit
+    ports:
+      - "5432:5432"
+    networks:
+      - code_orbit
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+
+  redis:
+    image: redis
+    container_name: redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    environment:
+      REDIS_PASSWORD: ""
+    networks:
+      - code_orbit
+
+  rabbitmq:
+    image: rabbitmq:3-alpine
+    container_name: rabbitmq
+    restart: unless-stopped
+    ports:
+      - "5672:5672"
+    healthcheck:
+      test: ["CMD", "rabbitmqctl", "status"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - code_orbit
+
+  api-service:
+    image: shivaraj3652/codeorbit-apiservice:v1
+    container_name: api-service
+    restart: unless-stopped
+    depends_on:
+      - user-service
+      - admin-service
+      - chat-service
+    ports:
+      - "8080:8080"
+    networks:
+      - code_orbit
+
+  user-service:
+    image: shivaraj3652/codeorbit-userservice:v1
+    container_name: user-service
+    restart: unless-stopped
+    depends_on:
+      - problem-service
+      - postgres
+      - redis
+      - rabbitmq
+    ports:
+      - "3001:3001"
+    networks:
+      - code_orbit
+
+  admin-service:
+    image: shivaraj3652/codeorbit-adminservice:v1
+    container_name: admin-service
+    restart: unless-stopped
+    depends_on:
+      - problem-service
+      - postgres
+      - user-service
+    ports:
+      - "3002:3002"
+    networks:
+      - code_orbit
+
+  problem-service:
+    image: shivaraj3652/codeorbit-problemservice:v1
+    container_name: problem-service
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    ports:
+      - "3003:3003"
+    networks:
+      - code_orbit
+
+  chat-service:
+    image: shivaraj3652/codeorbit-chatservice:v1
+    container_name: chat-service
+    restart: unless-stopped
+    depends_on:
+      - user-service
+    ports:
+      - "3004:3004"
+    networks:
+      - code_orbit
+
+  notification-service:
+    image: shivaraj3652/codeorbit-notificationservice:v1
+    container_name: notification-service
+    restart: unless-stopped
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    networks:
+      - code_orbit
+
+networks:
+  code_orbit:
+    driver: bridge
+
+volumes:
+  postgres_data:

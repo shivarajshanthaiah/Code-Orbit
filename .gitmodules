@@ -1,0 +1,18 @@
+[submodule "code_orbit_APIGateway"]
+	path = code_orbit_APIGateway
+	url = https://github.com/shivarajshanthaiah/code-orbit-APIGateway.git
+[submodule "code_orbit_admin"]
+	path = code_orbit_admin
+	url = https://github.com/shivarajshanthaiah/code-orbit-admin.git
+[submodule "code_orbit_user"]
+	path = code_orbit_user
+	url = https://github.com/shivarajshanthaiah/code-orbit-user.git
+[submodule "code_orbit_problem"]
+	path = code_orbit_problem
+	url = https://github.com/shivarajshanthaiah/code-orbit-problem.git
+[submodule "code_orbit_notification"]
+	path = code_orbit_notification
+	url = https://github.com/shivarajshanthaiah/code-orbit-notification.git
+[submodule "code_orbit_chat"]
+	path = code_orbit_chat
+	url = https://github.com/shivarajshanthaiah/code-orbit-chat.git
