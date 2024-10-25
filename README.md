@@ -5,7 +5,8 @@ Users benefit from OTP-based authentication via Twilio, Razorpay-powered subscri
 The platform provides a smooth programming experience with advanced error handling and exclusive perks for prime members.
 
 ## Live Demo
-Access the live demo of this project at (https://codeorbit.shivaraj.live/api/user/signup).
+To access the live demo of this project, please visit my API documentation and test it using any API testing software.
+Detailed API documentation link - https://documenter.getpostman.com/view/32823353/2sAY4siPR5
 
 ## Features
 
@@ -58,11 +59,6 @@ Access the live demo of this project at (https://codeorbit.shivaraj.live/api/use
 - **Containerization:**
    - Docker
    - Kubernetes
-
-## API Documentation
-
-For detailed API documentation, refer to - (https://documenter.getpostman.com/view/32823353/2sAY4siPR5) - API Documentation.
-
 
 ## Setup and Installation
 
