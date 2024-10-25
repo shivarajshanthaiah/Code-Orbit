@@ -79,7 +79,8 @@ For detailed API documentation, refer to - (https://documenter.getpostman.com/vi
 
 3.Set up the database:
 
-    CREATE DATABASE docapp
+    CREATE DATABASE codeorbit
+    install the UUID extension
     
 
 4.Configure environment variables:
