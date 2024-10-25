@@ -5,7 +5,7 @@ Users benefit from OTP-based authentication via Twilio, Razorpay-powered subscri
 The platform provides a smooth programming experience with advanced error handling and exclusive perks for prime members.
 
 ## Live Demo
-Access the live demo of this project at (https://codeorbit.shivaraj.live).
+Access the live demo of this project at (https://codeorbit.shivaraj.live/api/user/signup).
 
 ## Features
 
