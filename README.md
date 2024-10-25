@@ -55,6 +55,10 @@ Access the live demo of this project at (https://codeorbit.shivaraj.live).
   - SMTP for email notifications.
   - GORM as the ORM.
 
+- **Containerization:**
+   - Docker
+   - Kubernetes
+
 ## API Documentation
 
 For detailed API documentation, refer to - (https://documenter.getpostman.com/view/32823353/2sAY4siPR5) - API Documentation.
