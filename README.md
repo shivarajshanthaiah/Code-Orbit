@@ -91,6 +91,7 @@ Detailed API documentation link - https://documenter.getpostman.com/view/3282335
     GRPCCHATPORT:     #########
 
     DB_Config="host=localhost user=##### password=***** dbname=******* port=0000 sslmode=disable"  
+    
     MONGODB_URL = mongodb+srv:##########:neo6lQjerEyggJky@#######.xdo0n.mongodb.net/********?retryWrites=true&w=majority&appName=########
     MONGODB_NAME = *******
 
